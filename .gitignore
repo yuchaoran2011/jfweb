@@ -1,2 +1,4 @@
 .idea/*
 */*.pyc
+mysite/minitrace/migrations/*
+mysite/db.sqlite3

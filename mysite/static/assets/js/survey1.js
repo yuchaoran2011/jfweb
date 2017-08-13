@@ -98,14 +98,19 @@ window.survey = new Survey.Model({
        ]
 });
 
-
 survey.onComplete.add(function(result) {
 	document.querySelector('#surveyResult').innerHTML = "result: " + JSON.stringify(result.data);
+	console.log(document.cookie);
+
+    $.ajax({
+        type: 'POST',
+        dataType: 'json',
+        contentType: 'application/json; charset=utf-8',
+        url: "/minitrace/postsurveyresults",
+        data: JSON.stringify(result.data)
+    })
 });
+
 survey.showProgressBar = "bottom";
 
-
 $("#surveyElement").Survey({model:survey});
-
-
-
