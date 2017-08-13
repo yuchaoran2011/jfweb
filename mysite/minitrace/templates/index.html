@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>miniTRACE</title>
+		{% load static %}
+		<link rel="stylesheet" href="{% static "assets/css/style.css" %}" />
+		<link rel="stylesheet" href="{% static "assets/css/bootstrap.min.css" %}" />
+		<link href="https://fonts.googleapis.com/css?family=Radley" rel="stylesheet">
+	</head>
+	<body>
+
+		<div id="tracebar">
+				<header>miniTRACE</header>
+		</div>
+
+		<div class="admin">
+			<p style="margin-top: 80px; font-size: 20px"><strong>Here is your task:</strong></p>
+			<ul>
+				<li><a href="{% url 'tank' %}">Tanks</a></li>
+				<li><a href="{% url 'unusualsuspects' %}">Unusual Suspects</a></li>
+				<li><a href="{% url 'druginterdiction' %}">Drug Interdiction</a></li>
+				<li><a href="{% url 'iskalmiusnext' %}">Is Kalmius Next?</a></li>
+				<li><a href="{% url 'whomurderedlinda' %}">Who Murdered Linda Nelson?</a></li>
+				<li><a href="{% url 'whichlovell' %}">Which Lovell?</a></li>
+			</ul>
+		</div>
+
+		{% load static %}
+		<script src="{% static "assets/js/topbar.js" %}"></script>
+		<script src="{% static "assets/js/expanablebar.js" %}"></script>
+	</body>
+</html>

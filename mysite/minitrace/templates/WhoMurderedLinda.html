@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>miniTRACE</title>
+		{% load static %}
+		<link rel="stylesheet" href="{% static "assets/css/survey.css" %}" />
+		<link rel="stylesheet" href="{% static "assets/css/bootstrap.min.css" %}" />
+		<link href="https://fonts.googleapis.com/css?family=Radley" rel="stylesheet">
+		<link rel="stylesheet" href="{% static "assets/css/style.css" %}" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://surveyjs.azureedge.net/0.12.20/survey.jquery.js"></script>
+		<script src="https://surveyjs.azureedge.net/0.12.20/survey.jquery.min.js"></script>
+		<script src="{% static "assets/js/ckeditor.js" %}"></script>
+		<link rel="stylesheet" href="{% static "assets/css/modal.css" %}" />
+	</head>
+
+	<body>
+		<div id="tracebar">
+		    <header>miniTRACE</header>
+		</div>
+
+		<p class="question">Which suspects should the police be investigating in the murder case?
+			<button id="expandable" class="unfolded" style="display: inline;" >Hide</button>
+		</p>
+				
+
+		<div id="content">
+		 <p>Linda Nelson's death was announced unceremoniously on her Facebook page. "That Bitch is dead!" a post published on June 12, 2016. Tracy, Linda's daughter was reported missing after her mother was found slain, then she was found alive in Wis. Please help identify the suspect(s) police should investigating in this case.</p>
+		</div>
+
+		<div class="row">
+			<div id="tools" class="col-md-3">
+				<p class="tools">Tools</p>
+				
+				<div class="toolscontent">
+					<p class="notes">notes</p>
+
+					<form>
+            		<textarea name="editor1" id="editor1" rows="50" cols="10"> you can take notes here
+            		</textarea>
+            		<script>
+                	// Replace the <textarea id="editor1"> with a CKEditor
+                	// instance, using default configuration.
+                	CKEDITOR.replace( 'editor1', 
+                		{language: 'en',uiColor: '#9AB8F3'} );
+            		</script>
+            		</form>
+
+				</div>
+        		
+			</div>
+			
+			<div id="survey" class="col-md-6">
+				<p class="survey">Survey</p>
+
+				<div class="surveycontent">
+					<p>Please read the case information and resources to answer the questions</p>
+    				<div id="surveyContainer"></div>
+				</div>
+			</div>
+			
+			<div id="resources" class="col-md-3">
+				<p class="resources">Resources</p>
+				<ul class="resourceslist">
+					{% load static %}
+					<li><a href="{% static "assets/html/WhoMurderedLinda/MoteenfoundaliveinWisaftermotherslain.html" %} target="_blank">Mo. teen found alive in Wis. after mother slain</a></li>
+					<li><a href="{% static "assets/html/WhoMurderedLinda/ArecordofmediainterviewwithEllenPinegar.html" %} target="_blank">A record of media interview with Ellen Pinegar</a></li>
+					<li><a href="{% static "assets/html/WhoMurderedLinda/GreeneCountySheriffOffice.html" %} target="_blank">News release from Greene County Sheriff</a></li>
+					<li><a href="{% static "assets/html/WhoMurderedLinda/InformationonCharlieGoldammer.html" %} target="_blank">Information on Charlie Goldammer</a></li>
+					<li><a href="{% static "assets/html/WhoMurderedLinda/SomepostsfromEmmaRose.html" %} target="_blank">Some posts from Emma Rose</a></li>
+					<li><a href="{% static "assets/html/WhoMurderedLinda/BuzzFeedNewsItem.html" %} target="_blank">BuzzFeed News Item</a></li>
+					<li><a href="{% static "assets/html/WhoMurderedLinda/ApoliceinterviewrecordfromDrRobertStewart.html" %} target="_blank">A police interview record from Dr. Robert Stewart</a></li>
+					<li><a href="{% static "assets/html/WhoMurderedLinda/AnewsarticleaboutPornographyatMcDonalds.html" %} target="_blank">A news article about Pornography at McDonald's</a></li>
+					<li><a href="{% static "assets/html/WhoMurderedLinda/AnitemfromSpringfieldNews-Leader.html" %} target="_blank">An item from Springfield News-Leader</a></li>
+				</ul>
+			</div>
+		</div>
+
+		{% load static %}
+		<script src="{% static "assets/js/topbar.js" %}"></script>
+		<script src="{% static "assets/js/expanablebar.js" %}"></script>
+		<script src="{% static "assets/js/survey1.js" %}"></script>
+		<script src="{% static "assets/js/modal.js" %}"></script>
+	</body>
+</html>

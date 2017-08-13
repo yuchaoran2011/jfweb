@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>miniTRACE</title>
+		{% load static %}
+		<link rel="stylesheet" href="{% static "assets/css/bootstrap.min.css" %}" />
+		<link href="https://fonts.googleapis.com/css?family=Radley" rel="stylesheet" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="{% static "assets/css/style.css" %}" />
+		<script src="https://surveyjs.azureedge.net/0.12.20/survey.jquery.js"></script>
+		<script src="https://surveyjs.azureedge.net/0.12.20/survey.jquery.min.js"></script>
+		<link rel="stylesheet" href="{% static "assets/css/survey.css" %}" />
+		<script src="{% static "assets/js/ckeditor.js" %}"></script>
+		<link rel="stylesheet" href="{% static "assets/css/modal.css" %}" />
+	</head>
+
+	<body>
+		<div id="tracebar">
+		    <header>miniTRACE</header>
+		</div>
+
+		<p class="question">What is the probability that the journalist correctly identified the tanks as Russian?
+
+			<button id="expandable" class="unfolded" style="display: inline;" >Hide</button>
+			<button id="myBtn" style="width: 40px;display: inline;border: none;padding: 0px;vertical-align: middle;">
+				{% load static %}
+				<img src="{% static "assets/images/picbutton.png" %}" alt="picbutton">
+			</button>
+			<!-- The Modal -->
+				<div id="myModal" class="modal">
+
+					<!-- Modal content -->
+					<div class="modal-content">
+					<span class="close">&times;</span>
+						{% load static %}
+					    <img src="{% static "assets/images/RussianTank.png" %}" alt="RussianTank">
+					</div>
+
+				</div>
+
+		</p>
+				
+		
+
+		<div id="content">
+			<p>Please consult the following scale to assess probabilities for your answer:</p>
+				<table >
+					<td style="width: 80%">
+						<table class="informationtable">
+							<tr class="informationtable">
+								<th class="informationtable">almost no chance</th>
+								<th class="informationtable">very unlikely</th>
+								<th class="informationtable">unlikely</th>
+								<th class="informationtable">roughly even chance</th>
+								<th class="informationtable">likely</th>
+								<th class="informationtable">very likely</th>
+								<th class="informationtable">almost certainly</th>
+							</tr>
+
+							<tr class="informationtable">
+								<td class="informationtable">01 - 05 %</td>
+								<td class="informationtable">05 - 20 %</td>
+								<td class="informationtable">20 - 45 %</td>
+								<td class="informationtable">45 - 55 %</td>
+								<td class="informationtable">55 - 80 %</td>
+								<td class="informationtable">80 - 95 %</td>
+								<td class="informationtable">95 - 99 %</td>
+							</tr>
+						</table>
+						
+						<p>These tanks were photographed by a freelance journalist during the late Fall of 2016 close to the joint border of Latvia and Belarus. The journalist asserted that these were Russian vehicles and that they were just inside Latvian territory. If this is true, this is a serious threat to Latvian territorial sovereignty. Based on the evidence provided, please consider the likelihood that these images show tanks that would be consistent with a Russian led or Russian backed incursion.</p>
+					</td>
+
+					<td style="width: 30%">
+						{% load static %}
+					    <img src="{% static "assets/images/RussianTank.png" %}" alt="RussianTank">
+					</td>
+				</table>
+		</div>
+
+
+		
+		<div class="row">
+			<div id="tools" class="col-md-3">
+				<p class="tools">Tools</p>
+				
+				<div class="toolscontent">
+					<p class="notes">notes</p>
+
+					<form>
+            		<textarea name="editor1" id="editor1" rows="50" cols="10"> you can take notes here
+            		</textarea>
+            		<script>
+                	// Replace the <textarea id="editor1"> with a CKEditor
+                	// instance, using default configuration.
+                	CKEDITOR.replace( 'editor1', 
+                		{language: 'en',uiColor: '#9AB8F3'} );
+            		</script>
+            		</form>
+
+				</div>
+        		
+			</div>
+			
+			<div id="survey" class="col-md-6">
+				<p class="survey">Survey</p>
+
+				<div class="surveycontent">
+					<p>Please read the case information and resources to answer the questions</p>
+    				<div id="surveyContainer"></div>
+				</div>
+			</div>
+			
+			<div id="resources" class="col-md-3">
+				<p class="resources">Resources</p>
+				<ul class="resourceslist">
+					{% load static %}
+					<li><a href="{% static "assets/html/tank/Political_map_of_Eastern_Europe.html" %}" target="_blank">Political map of Eastern Europe</a></li>
+					<li><a href="{% static "assets/html/tank/Highlights_of_NATO-Russia_relations.html" %}" target="_blank">Highlights of NATO-Russia relations</a></li>
+					<li><a href="{% static "assets/html/tank/Current_Russian_tank-Mark_IX.html" %}" target="_blank">Current Russian tank: Mark IX</a></li>
+					<li><a href="{% static "assets/html/tank/Russian_Tanks_near_border_of_Crimea.html" %}" target="_blank">Russian tanks near Crimea</a></li>
+					<li><a href="{% static "assets/html/tank/Tanks_in_Chechnya.html" %}" target="_blank">Tanks in Chechnya</a></li>
+					<li><a href="{% static "assets/html/tank/The_Mark_VI.html" %}" target="_blank">The Mark VI</a></li>
+					<li><a href="{% static "assets/html/tank/Modernizations_in_Ukraine.html" %}" target="_blank">Modernization in Ukraine</a></li>
+					<li><a href="{% static "assets/html/tank/Ukraine_crisis.html" %}" target="_blank">Ukraine Crisis</a></li>
+					<li><a href="{% static "assets/html/tank/Current_Operators_Mark VI.html" %}" target="_blank">Current Operators Mark VI</a></li>
+				</ul>
+			</div>
+		</div>
+
+		{% load static %}
+		<script src="{% static "assets/js/topbar.js" %}"></script>
+		<script src="{% static "assets/js/expanablebar.js" %}"></script>
+		<script src="{% static "assets/js/survey1.js" %}"></script>
+		<script src="{% static "assets/js/modal.js" %}"></script>
+	</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>miniTRACE</title>
+		{% load static %}
+		<link rel="stylesheet" href="{% static "assets/css/survey.css" %}" />
+		<link rel="stylesheet" href="{% static "assets/css//bootstrap.min.css" %}" />
+		<link href="https://fonts.googleapis.com/css?family=Radley" rel="stylesheet">
+		<link rel="stylesheet" href="{% static "assets/css//style.css" %}" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://surveyjs.azureedge.net/0.12.20/survey.jquery.js"></script>
+		<script src="https://surveyjs.azureedge.net/0.12.20/survey.jquery.min.js"></script>
+		<script src="{% static "assets/js/ckeditor.js" %}"></script>
+		<link rel="stylesheet" href="{% static "assets/css//modal.css" %}" />
+	</head>
+
+	<body>
+		<div id="tracebar">
+		    <header>miniTRACE</header>
+		</div>
+
+		<p class="question">Which individual/s named A.B. Lovell is/are most likely to be associated with Julia Howser?
+
+			<button id="expandable" class="unfolded" style="display: inline;" >Hide</button>
+
+		</p>
+
+		<div id="content">
+		 <p>The name A. B. Lovell, followed by the number 5725, was recently handwritten on a piece of paper torn from a small notebook, found at the scene of a drug bust at 5670 Rouse Road in Orlando on July 5, 2016. The arrested dealer (marijuana, heroin) was Julia Howser, aged 24, owner of the house, teaching assistant in computer science at University of Central Florida in Orlando. "5725" is believed to be part of an address or telephone number for A. B. Lovell. The drug enforcement officers are continuing their investigation.</p>
+		</div>
+
+		<div class="row">
+			<div id="tools" class="col-md-3">
+				<p class="tools">Tools</p>
+				
+				<div class="toolscontent">
+					<p class="notes">notes</p>
+
+					<form>
+            		<textarea name="editor1" id="editor1" rows="50" cols="10"> you can take notes here
+            		</textarea>
+            		<script>
+                	// Replace the <textarea id="editor1"> with a CKEditor
+                	// instance, using default configuration.
+                	CKEDITOR.replace( 'editor1', 
+                		{language: 'en',uiColor: '#9AB8F3'} );
+            		</script>
+            		</form>
+
+				</div>
+        		
+			</div>
+			
+			<div id="survey" class="col-md-6">
+				<p class="survey">Survey</p>
+
+				<div class="surveycontent">
+					<p>Please read the case information and resources to answer the questions</p>
+    				<div id="surveyContainer"></div>
+				</div>
+			</div>
+			
+			<div id="resources" class="col-md-3">
+				<p class="resources">Resources</p>
+				<ul class="resourceslist">
+					{% load static %}
+					<li><a href="{% static "assets/html/WhichLovell/Newsarticleondrugbust.html" %}" target="_blank">News article on drug bust</a></li>
+					<li><a href="{% static "assets/html/WhichLovell/FacebookpostingsforVictoryOutreachChurch.html" %}" target="_blank">Facebook postings for Victory Outreach Church</a></li>
+					<li><a href="{% static "assets/html/WhichLovell/ResultsofWhitepagessearchforALovellsinthispartofCentralFlorida.html" %}" target="_blank">Results of White pages search for A. Lovells in this part of Central Florida</a></li>
+					<li><a href="{% static "assets/html/WhichLovell/ResultsofLinkedInsearch.html" %}" target="_blank">Results of LinkedIn search</a></li>
+					<li><a href="{% static "assets/html/WhichLovell/ColdwellBankerTampaexcerpts.html" %}" target="_blank">Coldwell Banker, Tampa, excerpts</a></li>
+					<li><a href="{% static "assets/html/WhichLovell/FacebookpostingsforAbigailLovell.html" %}" target="_blank">Facebook postings for Abigail Lovell</a></li>
+					<li><a href="{% static "assets/html/WhichLovell/FacebookprofileforAlejandroBLovellandJacquelineLovell.html" %}" target="_blank">Facebook profile for Alejandro B. Lovell and Jacqueline Lovell:</a></li>
+				</ul>
+			</div>
+		</div>
+
+		{% load static %}
+		<script src="{% static "assets/js/topbar.js" %}"></script>
+		<script src="{% static "assets/js/expanablebar.js" %}"></script>
+		<script src="{% static "assets/js/survey1.js" %}"></script>
+		<script src="{% static "assets/js/modal.js" %}"></script>
+	</body>
+</html>

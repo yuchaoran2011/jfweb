@@ -1,0 +1,69 @@
+body {
+    font-size: 16px;
+    padding: 20px;
+    background-color: #eee;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+
+#tracebar { 
+    border-bottom:1px solid #e78f08; 
+    background:#f6a828; 
+    padding:4px 8px;
+   	font-family: 'Radley', sans-serif;
+   	font-size: 20px;
+    position:fixed; 
+    top:0; 
+    left:0; 
+    z-index:2000; 
+    width:100%;
+    height: 40px;
+}
+
+
+
+h1 {
+	padding: 20px;
+	text-align: center;
+}
+
+p {
+    padding: 5px;
+    line-height: 150%;
+}
+
+
+
+.content, .source {
+    margin: 20px;
+    font-size: 16px;
+}
+
+.easteurmap {
+	max-height: 90%;
+	max-width: 90%;
+	margin:10px;
+	}
+
+.MarkIX, .MarkVI  {
+        margin:10px;
+        width: 45%;
+    }
+
+.ModernRussianAFVsInChechnya {
+    padding-left:200px;
+    padding-bottom: 20px;
+}
+
+table, tr, th, td {
+    border:none;
+    line-height: 150%;
+    /*margin: auto;*/
+}
+
+li {
+    line-height: 150%;
+}
+
+
+

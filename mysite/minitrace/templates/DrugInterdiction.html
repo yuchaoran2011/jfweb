@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>miniTRACE</title>
+		{% load static %}
+		<link rel="stylesheet" href="{% static "assets/css/bootstrap.min.css" %}" />
+		<link href="https://fonts.googleapis.com/css?family=Radley" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="{% static "assets/css/style.css" %}" />
+		<script src="https://surveyjs.azureedge.net/0.12.20/survey.jquery.js"></script>
+		<script src="https://surveyjs.azureedge.net/0.12.20/survey.jquery.min.js"></script>
+		<link rel="stylesheet" href="{% static "assets/css/survey.css" %}" />
+		<script src="{% static "assets/js/ckeditor.js" %}"></script>
+		<link rel="stylesheet" href="{% static "assets/css/modal.css" %}" />
+	</head>
+
+	<body>
+		<div id="tracebar">
+		    <header>miniTRACE</header>
+		</div>
+
+			<p class="question">What would be the optimal patrol ship to deploy to intercept shipments of cocaine, and in which area would you deploy it? (please select one ship and a single position of the corresponding letter on the map to indicate the center of the area to be patrolled, and offer a rationale to explain your decision).
+				<button id="expandable" class="unfolded" style="display: inline;" >Hide</button>
+				<button id="myBtn" style="width: 40px;display: inline;border: none;padding: 0px;vertical-align: middle;">
+					{% load static %}
+					<img src="{% static "assets/images/picbutton.png" %}" alt="picbutton">
+				</button>
+				<!-- The Modal -->
+					<div id="myModal" class="modal">
+
+						<!-- Modal content -->
+						<div class="modal-content">
+						<span class="close">&times;</span>
+							{% load static %}
+						    <img src="{% static "assets/images/DrugInterdictionDescription.png" %}" alt="DrugInterdictionDescription">
+						</div>
+
+					</div>
+
+			</p>
+
+		<div id="content">
+			<table >
+				<td style="width: 80%">
+
+					<p>The US is looking to intercept shipments of drugs. Cocaine smugglers are leaving a variety of locations in South America, and landing at locations in Central America. The drug smugglers tend to reuse the same routes. Ideal locations to patrol when looking for smugglers are places where these known smuggling routes converge. The majority of drug smugglers are operating using routes that follow the coast, or routes that are a straight line between the starting port and the destination, using go-fast speed boats. They do utilize other routes using other types of vessels, but with lower overall frequency.</p>
+
+					<p>This close to the equator, the Coast Guard vessels have approximately 12 hours of daylight during which to most effectively search for, intercept, and board smuggler's vessels.</p>
+
+					<p><strong>Conversions for speeds and distances at sea:</strong></p>
+
+					<div>
+						<li style="padding-bottom: 0px;">10 knots = 11.5 miles per hour</li>
+						<li style="padding-top: 0px;">10 nautical miles = 11.5 miles</li>
+					</div>
+
+					<p>Your job is to recommend action for where to deploy one of three patrol ships (descriptions below) to best help intercept shipments of cocaine. You can only deploy a single ship. The vessel you select will be deployed for 2 days in this operation.</p>
+
+				</td>
+				
+				<td>
+					{% load static %}
+					<img style="margin-left: 40px;" src="{% static "assets/images/DrugInterdictionDescription.png" %}" alt="DrugInterdictionDescription">
+				</td>
+			</table>
+		</div>
+	
+
+
+		<div class="row">
+			<div id="tools" class="col-md-3">
+				<p class="tools">Tools</p>
+				
+				<div class="toolscontent">
+					<p class="notes">notes</p>
+
+					<form>
+            		<textarea name="editor1" id="editor1" rows="50" cols="10"> you can take notes here
+            		</textarea>
+            		<script>
+                	// Replace the <textarea id="editor1"> with a CKEditor
+                	// instance, using default configuration.
+                	CKEDITOR.replace( 'editor1', 
+                		{language: 'en',uiColor: '#9AB8F3'} );
+            		</script>
+            		</form>
+
+				</div>
+        		
+			</div>
+			
+			<div id="survey" class="col-md-6">
+				<p class="survey">Survey</p>
+
+				<div class="surveycontent">
+					<p>Please read the case information and resources to answer the questions</p>
+    				<div id="surveyContainer"></div>
+				</div>
+			</div>
+			
+			<div id="resources" class="col-md-3">
+				<p class="resources">Resources</p>
+				<ul class="resourceslist">
+					{% load static %}
+					<li><a href="{% static "assets/html/DrugInterdiction/Legal_Authority.html" %}" target="_blank">Legal Authority</a></li>
+					<li><a href="{% static "assets/html/DrugInterdiction/Summary_of_2016_drug_interceptions.html" %}" target="_blank">Summary of 2016 drug interceptions</a></li>
+					<li><a href="{% static "assets/html/DrugInterdiction/Detection_of_smuggling_vessels.html" %}" target="_blank">Detection of smuggling vessels</a></li>
+					<li><a href="{% static "assets/html/DrugInterdiction/Types_of_vessels_to_intercept.html" %}" target="_blank">Types of vessels to intercept</a></li>
+					<li><a href="{% static "assets/html/DrugInterdiction/Assets_available_to_be_deployed.html" %}" target="_blank">Assets available to be deployed</a></li>
+					<li><a href="{% static "assets/html/DrugInterdiction/Major_smuggling_routes.html" %}" target="_blank">Major smuggling routes</a></li>
+					<li><a href="{% static "assets/html/DrugInterdiction/Weather_forecast_during_next_operational_window.html" %}" target="_blank">Weather forecast during next operational window</a></li>
+				</ul>
+			</div>
+		</div>
+
+		{% load static %}
+		<script src="{% static "assets/js/topbar.js" %}"></script>
+		<script src="{% static "assets/js/expanablebar.js" %}"></script>
+		<script src="{% static "assets/js/survey1.js" %}"></script>
+		<script src="{% static "assets/js/modal.js" %}"></script>
+	</body>
+</html>

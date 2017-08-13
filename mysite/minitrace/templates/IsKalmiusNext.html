@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>miniTRACE</title>
+		{% load static %}
+		<link rel="stylesheet" href="{% static "assets/css/survey.css" %}" />
+		<link rel="stylesheet" href="{% static "assets/css/bootstrap.min.css" %}" />
+		<link href="https://fonts.googleapis.com/css?family=Radley" rel="stylesheet">
+		<link rel="stylesheet" href="{% static "assets/css/style.css" %}" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://surveyjs.azureedge.net/0.12.20/survey.jquery.js"></script>
+		<script src="https://surveyjs.azureedge.net/0.12.20/survey.jquery.min.js"></script>
+		<script src="{% static "assets/js/ckeditor.js" %}"></script>
+		<link rel="stylesheet" href="{% static "assets/css/modal.css" %}" />
+	</head>
+
+	<body>
+		<div id="tracebar">
+		    <header>miniTRACE</header>
+		</div>
+
+		<p class="question">What is the probability of the Russian-backed forces capturing Kalmius within the next 3 months?
+
+			<button id="expandable" class="unfolded" style="display: inline;" >Hide</button>
+			<button id="myBtn" style="width: 40px;display: inline;border: none;padding: 0px;vertical-align: middle;">
+				{% load static %}
+				<img src="{% static "assets/images/picbutton.png" %}" alt="picbutton">
+			</button>
+			<!-- The Modal -->
+				<div id="myModal" class="modal">
+
+					<!-- Modal content -->
+					<div class="modal-content">
+						<span class="close">&times;</span>
+						{% load static %}
+					    <img src="{% static "assets/images/kalmius.jpg" %}" alt="kalmius">
+					</div>
+				</div>
+		</p>
+
+		<div id="content">
+			<p>Please provide an estimate using the following scale:</p>
+				<table >
+					<td style="width: 80%">
+						<table class="informationtable">
+							<tr class="informationtable">
+								<th class="informationtable">almost no chance</th>
+								<th class="informationtable">very unlikely</th>
+								<th class="informationtable">unlikely</th>
+								<th class="informationtable">roughly even chance</th>
+								<th class="informationtable">likely</th>
+								<th class="informationtable">very likely</th>
+								<th class="informationtable">almost certainly</th>
+							</tr>
+
+							<tr class="informationtable">
+								<td class="informationtable">01 - 05 %</td>
+								<td class="informationtable">05 - 20 %</td>
+								<td class="informationtable">20 - 45 %</td>
+								<td class="informationtable">45 - 55 %</td>
+								<td class="informationtable">55 - 80 %</td>
+								<td class="informationtable">80 - 95 %</td>
+								<td class="informationtable">95 - 99 %</td>
+							</tr>
+						</table>
+						
+						<p>As low-intensity fighting continues to flare in Eastern Ukraine, one question has persisted in Western policy circles: Could Russia and its proxy forces attempt to take the Ukrainian city of <strong>Kalmius</strong> by force? Given the economic, political and symbolic importance of <strong>Kalmius</strong>, a Russian move to seize this metropolitan center would represent a significant escalation of the fighting.</p>
+					</td>
+
+					<td style="width: 30%">
+						{% load static %}
+						<img src="{% static "assets/images/kalmius.jpg" %}" alt="kalmius">
+					</td>
+				</table>
+		</div>
+		
+		<div class="row">
+			<div id="tools" class="col-md-3">
+				<p class="tools">Tools</p>
+				
+				<div class="toolscontent">
+					<p class="notes">notes</p>
+
+					<form>
+            		<textarea name="editor1" id="editor1" rows="50" cols="10"> you can take notes here
+            		</textarea>
+            		<script>
+                	// Replace the <textarea id="editor1"> with a CKEditor
+                	// instance, using default configuration.
+                	CKEDITOR.replace( 'editor1', 
+                		{language: 'en',uiColor: '#9AB8F3'} );
+            		</script>
+            		</form>
+
+				</div>
+        		
+			</div>
+			
+			<div id="survey" class="col-md-6">
+				<p class="survey">Survey</p>
+
+				<div class="surveycontent">
+					<p>Please read the case information and resources to answer the questions</p>
+    				<div id="surveyContainer"></div>
+				</div>
+			</div>
+			
+			<div id="resources" class="col-md-3">
+				<p class="resources">Resources</p>
+				<ul class="resourceslist">
+					{% load static %}
+					<li><a href="{% static "assets/html/IsKalmiusNext/Ukrainian_forces_retake_control_in_a_city_held_by_rebels.html" %}" target="_blank">Ukrainian forces retake control in a city held by rebels</a></li>
+					<li><a href="{% static "assets/html/IsKalmiusNext/OSCE_reports_30_militant_tanks_near_the_Ukrainian_Kalmius.html" %}" target="_blank">OSCE reports 30 militant tanks near the Ukrainian Kalmius</a></li>
+					<li><a href="{% static "assets/html/IsKalmiusNext/Shirokino_attack_undermines_Ukraine’s_positions.html" %}" target="_blank">Shirokino attack undermines Ukraine’s positions</a></li>
+					<li><a href="{% static "assets/html/IsKalmiusNext/Russian_military_base_found_in_Ukraine_detailed_in_drone_video.html" %}" target="_blank">Russian military base found in Ukraine, detailed in drone video</a></li>
+					<li><a href="{% static "assets/html/IsKalmiusNext/Silent_advances-Russian_offensive_on_Kalmius_has_already_begun.html" %}" target="_blank">Silent advances: Russian offensive on Kalmius has already begun</a></li>
+					<li><a href="{% static "assets/html/IsKalmiusNext/Unfinished_Business_in_Ukraine.html" %}" target="_blank">Unfinished Business in Ukraine</a></li>
+				</ul>
+			</div>
+		</div>
+
+		{% load static %}
+		<script src="{% static "assets/js/topbar.js" %}"></script>
+		<script src="{% static "assets/js/expanablebar.js" %}"></script>
+		<script src="{% static "assets/js/survey1.js" %}"></script>
+		<script src="{% static "assets/js/modal.js" %}"></script>
+	</body>
+</html>
