@@ -7,3 +7,5 @@ from django.db import models
 class SurveyResults(models.Model):
 	mturk_id = models.CharField(max_length=14)
 	results = models.TextField()
+	duration = models.BigIntegerField()
+	references = models.TextField()
