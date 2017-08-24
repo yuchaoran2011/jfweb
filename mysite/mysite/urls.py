@@ -18,8 +18,11 @@ from django.contrib import admin
 
 from . import views
 
+from django.conf import settings
+from django.conf.urls.static import static
+
 urlpatterns = [
 	url(r'^$', views.index_controller, name='index_controller'),
 	url(r'^minitrace/', include('minitrace.urls')),
 	url(r'^admin/', admin.site.urls),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
