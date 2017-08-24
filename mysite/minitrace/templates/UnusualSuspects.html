@@ -5,10 +5,10 @@
 		<title>miniTRACE</title>
 		{% load static %}
 		<link rel="stylesheet" href="{% static "assets/css/bootstrap.min.css" %}" />
-		<link href="https://fonts.googleapis.com/css?family=Radley" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Radley" rel="stylesheet" />
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<link rel="stylesheet" href="{% static "assets/css/style.css" %}" />
 		<link rel="stylesheet" href="https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="{% static "assets/css/style.css" %}" />
 		<script src="https://surveyjs.azureedge.net/0.12.21/survey.jquery.js"></script>
 		<script src="https://surveyjs.azureedge.net/0.12.21/survey.jquery.min.js"></script>
 		<link rel="stylesheet" href="{% static "assets/css/survey.css" %}" />
@@ -59,38 +59,30 @@
 				</td>
 			</table>
 		</div>
-	
-
 
 		<div class="row">
 			<div id="tools" class="col-md-3">
 				<p class="tools">Tools</p>
-				
 				<div class="toolscontent">
 					<p class="notes">notes</p>
-
 					<form>
-            		<textarea name="editor1" id="editor1" rows="50" cols="10"> you can take notes here
-            		</textarea>
-            		<script>
-                	// Replace the <textarea id="editor1"> with a CKEditor
-                	// instance, using default configuration.
-                	CKEDITOR.replace( 'editor1', 
-                		{language: 'en',uiColor: '#9AB8F3'} );
-            		</script>
-            		</form>
-
+            			<textarea name="editor1" id="editor1" rows="50" cols="10"> you can take notes here
+            			</textarea>
+            			<script>
+                			// Replace the <textarea id="editor1"> with a CKEditor
+                			// instance, using default configuration.
+                			CKEDITOR.replace( 'editor1', {language: 'en',uiColor: '#9AB8F3'} );
+            			</script>
+					</form>
 				</div>
-        		
 			</div>
 			
 			<div id="survey" class="col-md-6">
 				<p class="survey">Survey</p>
 
 				<div class="surveycontent">
-    				<div id="surveyElement"></div>
-    				<div id="surveyResult"></div>
-				</div>
+    					<div id="surveyElement"></div>
+    					<div id="surveyResult"></div>
 				</div>
 			</div>
 			
