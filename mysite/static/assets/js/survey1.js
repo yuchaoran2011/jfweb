@@ -2,8 +2,17 @@ Survey.Survey.cssType = "bootstrap";
 Survey.defaultBootstrapCss.navigationButton = "btn btn-green";
 Survey.defaultBootstrapCss.progressBar = "bar-green";
 
+var num_questions = 9;
 var start = Date.now();
 var clicked_references = new Set();
+
+// Durations spent on each question
+var lastPage = 0;
+var durations = [];
+for (i=0; i<num_questions; i++) {
+    durations.push(0.0);
+}
+var lastStartTime = Date.now();
 
 $('a').click( function(e) {clicked_references.add(this.innerHTML); return true; } );
 
@@ -103,7 +112,16 @@ window.survey = new Survey.Model({
        ]
 });
 
+survey.onCurrentPageChanged.add(function() {
+    durations[lastPage] += Date.now() - lastStartTime;
+    lastStartTime = Date.now();
+    lastPage = survey.currentPageNo;
+});
+
 survey.onComplete.add(function(result) {
+    // Fill in the duration for the last question
+    durations[lastPage] += Date.now() - lastStartTime;
+
 	document.querySelector('#surveyResult').innerHTML = "result: " + JSON.stringify(result.data);
 
 	var end = Date.now();
@@ -113,7 +131,8 @@ survey.onComplete.add(function(result) {
 	var data = {
         results: result.data,
         duration: duration,
-        references: arrReferences
+        references: arrReferences,
+        durations: durations
     }
 
     $.ajax({

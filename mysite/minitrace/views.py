@@ -26,7 +26,6 @@ def convert(input):
 @csrf_exempt
 def survey_results_controller(request):
 	if request.method == 'GET':
-		print 'wtf'
 		return HttpResponse()
 	elif request.method == 'POST':
 		print request.body
@@ -34,8 +33,6 @@ def survey_results_controller(request):
 		results = json_results['results']
 		duration = json_results['duration']
 		references = json_results['references']
-		print results
-		print duration
-		print references
-		SurveyResults.objects.create(results=results, duration=duration, references=references)
+		durations = json_results['durations']
+		SurveyResults.objects.create(results=results, duration=duration, references=references, durations=durations)
 		return HttpResponse()

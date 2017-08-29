@@ -9,3 +9,4 @@ class SurveyResults(models.Model):
 	results = models.TextField()
 	duration = models.BigIntegerField()
 	references = models.TextField()
+	durations = models.TextField()
